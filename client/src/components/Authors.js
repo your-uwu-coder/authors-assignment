@@ -17,7 +17,9 @@ const Authors = (props) => {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, [allAuthors])
+    //needed dependency array to automatic show the current state of useState
+
 
     //delete an author from client and server
     const deleteHandler = (id) => {
@@ -26,7 +28,6 @@ const Authors = (props) => {
             // console.log(`${id}`)
             .then((res) => {
                 navigate('/')
-                // console.log(id)
             })
             .catch((err) => {
                 console.log(err)
@@ -36,7 +37,7 @@ const Authors = (props) => {
 
 
     return (
-        <div className='w-50 ms-5 text-start'>
+        <div className='w-25 ms-5 text-start'>
             <Link to='/addAuthor'>Add an author</Link>
             <p>We have quotes by:</p>
 
